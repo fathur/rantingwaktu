@@ -1,4 +1,0 @@
-rantingwaktu
-============
-
-Ranting Waktu
