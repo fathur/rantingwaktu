@@ -1,5 +1,5 @@
 Ranting Waktu
-============
+=============
 
 # Daftar Isi
 
@@ -26,7 +26,7 @@ Untuk melakukannya:
 + Terlebih dahulu unduh dan pasang [Vagrant](http://vagrantup.com). 
 + Masuk ke direktori kerja Anda, ini bisa dimana saja. Dan kemudian clone git repository ini.
 ```
-$ https://git clone https://github.com/fathur/rantingwaktu.git
+$ git clone https://github.com/fathur/rantingwaktu.git
 ```
 + Setelah vagrant terinstall ketikkan
 ```
