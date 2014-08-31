@@ -60,16 +60,25 @@ Pada dasarnya vagrant hanyalah menggabungkan virtual machine (dalam hal ini meng
 
 Untuk melakukannya 
 
-1. Terlebih dahulu unduh dan pasang [Vagrant](http://vagrantup.com). 
-2. Masuk ke direktori kerja Anda, ini bisa dimana saja. Dan kemudian clone git repository ini.
++ Terlebih dahulu unduh dan pasang [Vagrant](http://vagrantup.com). 
++ Masuk ke direktori kerja Anda, ini bisa dimana saja. Dan kemudian clone git repository ini.
 ```
 $ https://git clone https://github.com/fathur/rantingwaktu.git
 ```
-3. Setelah vagrant terinstall ketikkan
++ Setelah vagrant terinstall ketikkan
 ```
 $ vagrant up
 ```
-
++ Kemudian masuk ke virtual machine vagrant menggunakan
+```
+$ vagrant ssh
+```
++ Setelah masuk di dalam virtual machine, lakukan instalasi laravel dengan mengetikkan:
+```
+$ cd /vagrant
+$ composer install
+```
++ Selanjutnya buka browser Anda di host machine dan ketikkan __http://localhost:1914/__
 
 # Konsep-konsep
 
