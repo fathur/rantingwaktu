@@ -1,7 +1,7 @@
 Ranting Waktu
 ============
 
-# Instalasi
+# Instalasi di host
 
 Aplikasi ini menggunakan framework php [Laravel](http://laravel.com/).
 Untuk instalasi laravel ke komputer teman-teman tidak cukup hanya menggunakan copy dan paste seperti yang dilakukan framework lainnya, instalasinya menggunakan [composer](https://getcomposer.org/) yaitu php package dependency manager. Sehingga komputer Anda harus terinstall composer.
@@ -52,6 +52,23 @@ $ php artisan serve
 ```
 
 Maka webserver kecil yang dikhususkan untuk aplikasi ini telah tersedia. Biasanya dapat diakses menggunakan url http://localhost:8000/, atau sesuaikan dengan informasi yang ditampilkan.
+
+
+# Instalasi menggunakan Vagrant
+
+Pada dasarnya vagrant hanyalah menggabungkan virtual machine (dalam hal ini menggunakan VirtualBox) ke dalam host agar memiliki environment yang tidak berubah-rubah antar developer. Dan komponen-komponen diatas, seperti composer, git, apache2, mysql tidak perlu diinstall di mesin host karena sudah diinstall di dalam virtual machine.
+
+Untuk melakukannya 
+
+1. Terlebih dahulu unduh dan pasang [Vagrant](http://vagrantup.com). 
+2. Masuk ke direktori kerja Anda, ini bisa dimana saja. Dan kemudian clone git repository ini.
+```
+$ https://git clone https://github.com/fathur/rantingwaktu.git
+```
+3. Setelah vagrant terinstall ketikkan
+```
+$ vagrant up
+```
 
 
 # Konsep-konsep
