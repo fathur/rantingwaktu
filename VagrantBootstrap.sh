@@ -2,6 +2,11 @@
 
 echo "--- Good morning, master. Let's get to work. Installing now. ---"
 
+
+sudo sed -i "s/http:\/\/us.archive.ubuntu.com/http:\/\/kambing.ui.ac.id/" /etc/apt/sources.list
+sudo sed -i "s/deb http:\/\/security.ubuntu.com/## deb http:\/\/security.ubuntu.com/" /etc/apt/sources.list
+sudo sed -i "s/deb-src http:\/\/security.ubuntu.com/## deb-src http:\/\/security.ubuntu.com/" /etc/apt/sources.list
+
 echo "--- Updating packages list ---"
 sudo apt-get update
 
