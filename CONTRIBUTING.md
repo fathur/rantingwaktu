@@ -6,7 +6,7 @@ Ranting Waktu
 + [Instalasi di Host](#instalasi-di-host)
 + [Instalasi Menggunakan Vagrant](#instalasi-menggunakan-vagrant)
 + [Konsep-konsep](#konsep-konsep)
-
+<!-- 
 # Instalasi di host
 
 Aplikasi ini menggunakan framework php [Laravel](http://laravel.com/).
@@ -57,7 +57,7 @@ Untuk menjalankan aplikasi ini ketikkan perintah:
 $ php artisan serve
 ```
 
-Maka webserver kecil yang dikhususkan untuk aplikasi ini telah tersedia. Biasanya dapat diakses menggunakan url http://localhost:8000/, atau sesuaikan dengan informasi yang ditampilkan.
+Maka webserver kecil yang dikhususkan untuk aplikasi ini telah tersedia. Biasanya dapat diakses menggunakan url http://localhost:8000/, atau sesuaikan dengan informasi yang ditampilkan. -->
 
 
 # Instalasi Menggunakan Vagrant
@@ -73,6 +73,7 @@ Syarat yang diperlukan adalah:
 
 1. [Sourctree](http://www.sourcetreeapp.com/)
 2. [Vagrant](http://vagrantup.com)
+3. [VirtualBox](https://www.virtualbox.org/)
 
 Untuk melakukannya:
 
