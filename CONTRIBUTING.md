@@ -42,7 +42,19 @@ $ cd /vagrant
 $ composer install
 ```
 + Selanjutnya buka browser Anda di host machine dan ketikkan __http://localhost:1914/__
-+ Dan Anda dapat melakukan pekerjaan developing di mesin host Anda. Selamat mengerjakan.
++ Dan Anda dapat melakukan pekerjaan developing di mesin host Anda.
++ Untuk mematikan bukan menggunakan perintah `vagrant destroy` tetapi gunakanlah perintah
+```
+$ vagrant halt
+```
++ Untuk menghidupkan kembali menggunakan perintah
+```
+$ vagrant up
+```
+
+> Virtual machine yang menggunakan vagrant ini menggunakan repository dari [Kambing UI](http://kambing.ui.ac.id/).
+> Dan file konfigurasi ini sudah diletakkan di VagrantBootstrap.sh.
+ 
 
 # Konsep-konsep
 
