@@ -1,6 +1,12 @@
 Ranting Waktu
 ============
 
+# Daftar Isi
+
++ [Instalasi di Host](#instalasi-di-host)
++ [Instalasi Menggunakan Vagrant](#instalasi-menggunakan-vagrant)
++ [Konsep-konsep](#konsep-konsep)
+
 # Instalasi di host
 
 Aplikasi ini menggunakan framework php [Laravel](http://laravel.com/).
@@ -54,11 +60,21 @@ $ php artisan serve
 Maka webserver kecil yang dikhususkan untuk aplikasi ini telah tersedia. Biasanya dapat diakses menggunakan url http://localhost:8000/, atau sesuaikan dengan informasi yang ditampilkan.
 
 
-# Instalasi menggunakan Vagrant
+# Instalasi Menggunakan Vagrant
 
-Pada dasarnya vagrant hanyalah menggabungkan virtual machine (dalam hal ini menggunakan VirtualBox) ke dalam host agar memiliki environment yang tidak berubah-rubah antar developer. Dan komponen-komponen diatas, seperti composer, git, apache2, mysql tidak perlu diinstall di mesin host karena sudah diinstall di dalam virtual machine.
+Pada dasarnya vagrant hanyalah menggabungkan virtual machine (dalam hal ini menggunakan VirtualBox) ke dalam host agar memiliki environment yang tidak berubah-rubah antar developer. Komponen-komponen seperti composer, git, apache2, mysql tidak perlu diinstall di mesin host karena sudah diinstall di dalam virtual machine.
 
-Untuk melakukannya 
+Istilah yang digunakan:
+
+1. Host machine: Sistem operasi utama
+2. Guest machine: Sistem operasi yang terinstall di virtual machine
+
+Syarat yang diperlukan adalah:
+
+1. [Sourctree](http://www.sourcetreeapp.com/)
+2. [Vagrant](http://vagrantup.com)
+
+Untuk melakukannya:
 
 + Terlebih dahulu unduh dan pasang [Vagrant](http://vagrantup.com). 
 + Masuk ke direktori kerja Anda, ini bisa dimana saja. Dan kemudian clone git repository ini.
@@ -79,6 +95,7 @@ $ cd /vagrant
 $ composer install
 ```
 + Selanjutnya buka browser Anda di host machine dan ketikkan __http://localhost:1914/__
++ Dan Anda dapat melakukan pekerjaan developing di mesin host Anda. Selamat mengerjakan.
 
 # Konsep-konsep
 
