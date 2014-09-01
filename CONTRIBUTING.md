@@ -1,5 +1,5 @@
 Ranting Waktu
-============
+=============
 
 # Daftar Isi
 
@@ -55,6 +55,29 @@ $ vagrant up
 
 > Virtual machine yang menggunakan vagrant ini menggunakan repository dari [Kambing UI](http://kambing.ui.ac.id/).
 > Dan file konfigurasi ini sudah diletakkan di VagrantBootstrap.sh.
+
+
+# Setting database
+
+Masuk ke dalam Vagrant box Anda.
+
+```bash
+$ vagrant ssh
+```
+
+Setelah itu buat table `rantingwaktu` di dalam database MySQL:
+
+```bash
+$ mysql -u root -proot
+
+> create database rantingwaktu;
+> exit;
+```
+
+Buka file `app/config/local` kemudian buka file `database.php`. Di bagian mysql, atur database menjadi `rantingwaktu`, username menjadi `root` dan password menjadi `root`.
+
+Selamat aplikasi Anda sudah terhubung ke database.
+
  
 
 # Konsep-konsep
