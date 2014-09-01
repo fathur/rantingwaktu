@@ -13,22 +13,23 @@ Pada dasarnya vagrant hanyalah menggabungkan virtual machine (dalam hal ini meng
 Istilah yang digunakan:
 
 1. Host machine: Sistem operasi utama
-2. Guest machine: Sistem operasi yang terinstall di virtual machine
+2. Guest machine: Sistem operasi yang terinstall di virtual machine (dalam hal ini menggunakan Ubuntu 12.04)
 
-Syarat yang diperlukan adalah:
+Tool-tool yang harus diinstall di dalam host machine adalah:
 
 1. [Sourctree](http://www.sourcetreeapp.com/)
 2. [Vagrant](http://vagrantup.com)
 3. [VirtualBox](https://www.virtualbox.org/)
 
+Pastikan semua tool tersebut terinstall. Sourcetree adalah GUI git management, dengan sourcetree kita dapat membaca perkembangan kode yang telah tersimpan perubahannya di git dengan lebih mudah daripada menggunakan terminal. Jika sebelumnya belum terdapat git di komputer Anda, maka Sourcetree akan melakukan instalasi otomatis, karena Sourcetree membutuhkan git untuk beroperasi.
+
 Untuk melakukannya:
 
-+ Terlebih dahulu unduh dan pasang [Vagrant](http://vagrantup.com). 
 + Masuk ke direktori kerja Anda, ini bisa dimana saja. Dan kemudian clone git repository ini.
 ```
 $ https://git clone https://github.com/fathur/rantingwaktu.git
 ```
-+ Setelah vagrant terinstall ketikkan
++ Kemudian masuk ke git terminal (biasanya ada di sebelah kanan atas Sourcetree) dan ketikkan
 ```
 $ vagrant up
 ```
@@ -41,7 +42,7 @@ $ vagrant ssh
 $ cd /vagrant
 $ composer install
 ```
-+ Selanjutnya buka browser Anda di host machine dan ketikkan __http://localhost:1914/__
++ Selanjutnya buka browser Anda di host machine dan ketikkan __http://localhost:1914/__, jika berhasil maka Anda akan mendapatkan halaman Laravel.
 + Dan Anda dapat melakukan pekerjaan developing di mesin host Anda.
 + Untuk mematikan bukan menggunakan perintah `vagrant destroy` tetapi gunakanlah perintah
 ```
