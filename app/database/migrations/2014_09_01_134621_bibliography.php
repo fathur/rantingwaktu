@@ -16,7 +16,7 @@ class Bibliography extends Migration {
 		{
 			$table->increments('id');
 
-			$table->integer('type_id'); // FK
+			$table->integer('type_id'); // Foreign key
 			$table->string('abbr_case_number', 45)->nullable();
 			$table->string('broadcaster', 45)->nullable();
 			$table->string('case_number', 45)->nullable();
@@ -73,7 +73,8 @@ class Bibliography extends Migration {
 			$table->string('station')->nullable();
 			$table->string('theater')->nullable();
 			$table->string('title')->nullable();
-			$table->text('url')->nullable();
+			$table->text('url_full')->nullable(); // versi lengkap url yang dimaksud. Ex: http://ex.com/?p=1&p=4&g=k
+			$table->text('url_base')->nullable(); // versi url dasar yang dimaksud. Ex: http://ex.com/
 			$table->float('version')->nullable();
 			$table->string('volume')->nullable();
 			$table->integer('year')->nullable();
