@@ -26,30 +26,30 @@ Pastikan semua tool tersebut terinstall. Sourcetree adalah GUI git management, d
 Untuk melakukannya:
 
 + Masuk ke direktori kerja Anda, ini bisa dimana saja. Dan kemudian clone git repository ini.
-```
+```bash
 $ git clone https://github.com/fathur/rantingwaktu.git
 ```
 + Kemudian masuk ke git terminal (biasanya ada di sebelah kanan atas Sourcetree) dan ketikkan
-```
+```bash
 $ vagrant up
 ```
 + Kemudian masuk ke virtual machine vagrant menggunakan
-```
+```bash
 $ vagrant ssh
 ```
 + Setelah masuk di dalam virtual machine, lakukan instalasi laravel dengan mengetikkan:
-```
+```bash
 $ cd /vagrant
 $ composer install
 ```
 + Selanjutnya buka browser Anda di host machine dan ketikkan __http://localhost:1914/__, jika berhasil maka Anda akan mendapatkan halaman Laravel.
 + Dan Anda dapat melakukan pekerjaan developing di mesin host Anda.
 + Untuk mematikan bukan menggunakan perintah `vagrant destroy` tetapi gunakanlah perintah
-```
+```bash
 $ vagrant halt
 ```
 + Untuk menghidupkan kembali menggunakan perintah
-```
+```bash
 $ vagrant up
 ```
 
