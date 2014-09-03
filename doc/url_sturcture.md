@@ -49,7 +49,9 @@ URL ROUTING
 + `GET /{username}/Topics` 			=> get/show list all topics by this user
 
 + `GET /Topic:{topic_slug}` 		=> get/show timelines post for current topic slug (sama seperti public area)
++ `GET /Topic/Create`				=> open form create new
 + `POST /Topic` 					=> save new topic
++ `GET /Topic:{topic_slug}/Edit`	=> edit selected topic
 + `UPDATE /Topic:{topic_id}` 		=> update topic
 + `DELETE /Topic:{topic_id}` 		=> delete topic
 
