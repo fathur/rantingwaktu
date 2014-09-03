@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"cartalyst/sentry": "2.0.*@dev"
+		"cartalyst/sentry": "2.0.*@dev",
+		"fitztrev/laravel-html-minify": "1.*"
 	},
 	"require-dev": {
     	"way/generators": "~3.0",
