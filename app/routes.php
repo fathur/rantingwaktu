@@ -131,7 +131,7 @@ Route::get('Search',
 		# code...
 	}
 ]);
-
+/*
 Route::get('{username}', 
 [
 	'as'=>'member.home',
@@ -151,4 +151,50 @@ Route::get('{username}/Topics',
 	{
 		# code...
 	}	
-]);
+]);*/
+
+/**
+ * =============================================
+ * 				Authentication routes
+ * =============================================
+ *
+ * Routes below use `AuthenticationController`.
+ *
+ */
+Route::get('Login', [
+	'as'=>'auth.login', 
+	'uses'=>'AuthController@getLogin']);
+
+Route::post('Login', [
+	'as'=>'auth.login.check', 
+	'uses'=>'AuthController@postLogin']);
+
+Route::get('Register', [
+	'as'=>'auth.register', 
+	'uses'=>'AuthController@getRegister']);
+
+Route::post('Register', [
+	'as'=>'auth.register.save', 
+	'uses'=>'AuthController@postRegister']);
+
+Route::get('Activate:{activation_code}', [
+	'as'=>'auth.activete', 
+	'uses'=>'AuthController@getActivate']);
+
+Route::get('Forgot', [
+	'as'=>'auth.forgot', 
+	'uses'=>'AuthController@getForgot']);
+
+Route::post('Forgot', [
+	'as'=>'auth.forgot.check', 
+	'uses'=>'AuthController@postForgot']);
+
+Route::get('Forgot:{reset_code}', [
+	'as'=>'auth.forgot.confirm', 
+	'uses'=>'AuthController@getForgotConfirm']);
+
+Route::post('Forgot:{reset_code}', 'AuthController@postForgotConfirm');
+
+Route::get('Logout', [
+	'as'=>'auth.logout', 
+	'uses'=>'AuthController@getLogout']);
