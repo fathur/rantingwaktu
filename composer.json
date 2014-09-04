@@ -7,8 +7,7 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"cartalyst/sentry": "2.0.*@dev",
-		"twitter/bootstrap": "3.2.*@dev",
-		"fitztrev/laravel-html-minify": "1.*"
+		"twitter/bootstrap": "3.2.*@dev"
 	},
 	"require-dev": {
     	"way/generators": "~3.0",
