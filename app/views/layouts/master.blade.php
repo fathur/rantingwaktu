@@ -52,7 +52,13 @@
 		</div>
 		</div>
 
-		@yield('content')
+		@yield('header')
+
+		<div class="container">
+			@yield('content')
+
+			@yield('footer')
+		</div>
 
 		{{HTML::script('packages/components/jquery/jquery.min.js')}}
 		<script>window.jQuery || document.write("/packages/components/jquery/jquery.min.js")</script>
