@@ -1,0 +1,1 @@
+/vagrant/app/views/auth/activate.blade.php

@@ -8,7 +8,8 @@
 		"laravel/framework": "4.2.*",
 		"cartalyst/sentry": "2.0.*@dev",
 		"twitter/bootstrap": "3.2.*@dev",
-		"fitztrev/laravel-html-minify": "1.*"
+		"components/modernizr": "dev-master",
+		"components/jquery": "dev-master"
 	},
 	"require-dev": {
     	"way/generators": "~3.0",

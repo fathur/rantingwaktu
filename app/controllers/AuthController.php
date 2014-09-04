@@ -12,7 +12,7 @@ class AuthController extends Controller {
 	public function getLogin()
 	{
 		# code...
-		return "a";
+		return View::make('auth.login');
 	}
 
 	public function postLogin()
@@ -22,7 +22,7 @@ class AuthController extends Controller {
 
 	public function getRegister()
 	{
-		# code...
+		return View::make('auth.register');
 	}
 
 	public function postRegister()
@@ -32,12 +32,12 @@ class AuthController extends Controller {
 
 	public function getActivate($activationCode)
 	{
-		# code...
+		return View::make('auth.activate');
 	}
 
 	public function getForgot()
 	{
-		# code...
+		return View::make('auth.forgot');
 	}
 
 	public function postForgot()
@@ -57,6 +57,6 @@ class AuthController extends Controller {
 
 	public function getLogout()
 	{
-		# code...
+		return View::make('auth.logout');
 	}
 }

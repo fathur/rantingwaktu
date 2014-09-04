@@ -123,8 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Way\Generators\GeneratorsServiceProvider',
-		'Cartalyst\Sentry\SentryServiceProvider',
-		'Fitztrev\LaravelHtmlMinify\LaravelHtmlMinifyServiceProvider',
+		'Cartalyst\Sentry\SentryServiceProvider'
 
 	),
 
