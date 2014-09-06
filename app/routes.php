@@ -178,7 +178,7 @@ Route::post('Register', [
 	'uses'=>'AuthController@postRegister']);
 
 Route::get('Activate:{activation_code}', [
-	'as'=>'auth.activate', 
+	'as'=>'auth.register.activate', 
 	'uses'=>'AuthController@getActivate']);
 
 Route::get('Forgot', [
@@ -200,3 +200,48 @@ Route::post('Forgot:{reset_code}', [
 Route::get('Logout', [
 	'as'=>'auth.logout', 
 	'uses'=>'AuthController@getLogout']);
+
+/**
+ * =============================================
+ * 				Administrator routes
+ * =============================================
+ *
+ * Routes below use `...`.
+ *
+ */
+
+
+Route::group(['prefix'=>'Administrator'], function ()
+{
+	# Definis namespace admin contoller
+	$adminNamespace = 'Controllers\Administrator\\';
+
+	# User Management
+	Route::get('Users', [
+		'as'=>'user.all',
+		'uses'=>$adminNamespace.'UsersController@getIndex']);
+
+	Route::get('Users/Create', [
+		'as'=>'user.create',
+		'uses'=>$adminNamespace.'UsersController@getCreate']);
+
+	Route::post('Users/Create', [
+		'as'=>'user.store',
+		'uses'=>$adminNamespace.'UsersController@postCreate']);
+
+	Route::get('User:{username}', [
+		'as'=>'user.show',
+		'uses'=>$adminNamespace.'UsersController@getShow']);
+
+	Route::get('User:{username}/Edit', [
+		'as'=>'user.edit',
+		'uses'=>$adminNamespace.'UsersController@getEdit']);
+
+	Route::put('User:{username}', [
+		'as'=>'user.update',
+		'uses'=>$adminNamespace.'UsersController@putUser']);
+
+	Route::delete('User:{username}', [
+		'as'=>'user.destroy',
+		'uses'=>$adminNamespace.'UsersController@deleteUser']);
+});
