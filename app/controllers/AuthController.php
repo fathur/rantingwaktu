@@ -24,7 +24,7 @@ class AuthController extends Controller {
 			return View::make('auth.login');
 
 		} else {
-			return Redirect::route('home', 'parameters', 'status', 'headers');
+			return Redirect::route('home');
 		}
 	}
 
@@ -196,24 +196,101 @@ class AuthController extends Controller {
 		}
 	}
 
+	// Halaman ini digunakan untuk menampilkan form forgot password
+	// yang dimana user harus mengisi email dan menekan tombol submit
 	public function getForgot()
 	{
+		if (Sentry::check()) {
+			return Redirect::route('home');
+		}
+
+
 		return View::make('auth.forgot');
 	}
 
+	// Fungsi ini adalah kelanjutan dari fungsi getForgot()
+	// Fungsi ini akan memproses email yang diinput
+	// dan mengirimkan kode reset ke email tadi
 	public function postForgot()
 	{
-		# code...
+		$validator = Validator::make([
+			'email' => Input::get('email')
+		], [
+			'email' => 'required|email'
+		]);
+
+		if ($validator->fails()) {
+			return Redirect::route('home');
+		}
+
+		try {
+			$user = Sentry::getUserProvider()->findByLogin(Input::get('email'));
+
+			Mail::send('emails.auth.forgot_code', [
+				'resetCodeURI'	=> URL::route('auth.forgot.confirm', $user->getResetPasswordCode() )
+			], 
+			function ($message) use ($user)
+			{
+				$message->to( $user->email );
+				$message->subject( 'Welcome to Ranting Waktu' );
+			});
+
+		} catch (Exception $e) {
+			
+		}
 	}
 
+	// fungsi ini memproses link reset code
+	// dan menampilkan form untuk mengisi password baru
 	public function getForgotConfirm($resetCode)
 	{
-		# code...
+
+		if (Sentry::check()) {
+			return Redirect::route('home');
+		}
+
+		try {
+			
+			$user = Sentry::getUserProvider()->findByResetPasswordCode($resetCode);			
+		
+		} catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
+		
+			return "User not found";
+		}
+
+		return View::make('auth.forgot_confirm')->with('resetCode', $resetCode);
 	}
 
+	// fungsi ini kelanjutan dari fungsi getForgotConfirm()
+	// dimana password baru yang dimasukkan user akan disimpan
 	public function postForgotConfirm($resetCode)
 	{
-		# code...
+		$validator = Validator::make([
+			'password'			=> Input::get('sandi'),
+			'password-confirm' 	=> Input::get('sandi-konfirmasi')
+		], [
+			'password'			=> 'required|min:7',
+			'password-confirm'	=> 'required|min:7|same:password'
+		]);
+
+		if ($validator->fails()) {
+
+			$messages = $validator->messages();
+			return $messages;
+		}
+
+		try {
+			
+			$user = Sentry::getUserProvider()->findByResetPasswordCode( $resetCode );
+
+			if ($user->attemptResetPassword($resetCode, Input::get('sandi')) ) {
+				return "success ganti password";
+			} else {
+				return "Gagal ganti password";
+			}
+		} catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
+			return "Account not found";
+		}
 	}
 
 	public function getLogout()

@@ -193,7 +193,9 @@ Route::get('Forgot:{reset_code}', [
 	'as'=>'auth.forgot.confirm', 
 	'uses'=>'AuthController@getForgotConfirm']);
 
-Route::post('Forgot:{reset_code}', 'AuthController@postForgotConfirm');
+Route::post('Forgot:{reset_code}', [
+	'as'=>'auth.forgot.renew',
+	'uses'=>'AuthController@postForgotConfirm']);
 
 Route::get('Logout', [
 	'as'=>'auth.logout', 
