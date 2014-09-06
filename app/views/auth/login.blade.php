@@ -1,39 +1,70 @@
 @extends('layouts.master')
 
-@section('header')
-<div class="jumbotron">
-	<div class="container">
-		<h1>Hello, world!</h1>
-		<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-		<p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-	</div>
-</div>
+@section('css')
+<style type="text/css">
+	body {
+	  padding-top: 40px;
+	  padding-bottom: 40px;
+	  background-color: #eee;
+	}
+
+	.form-signin {
+	  max-width: 330px;
+	  padding: 15px;
+	  margin: 0 auto;
+	}
+	.form-signin .form-signin-heading,
+	.form-signin .checkbox {
+	  margin-bottom: 10px;
+	}
+	.form-signin .checkbox {
+	  font-weight: normal;
+	}
+	.form-signin .form-control {
+	  position: relative;
+	  height: auto;
+	  -webkit-box-sizing: border-box;
+	     -moz-box-sizing: border-box;
+	          box-sizing: border-box;
+	  padding: 10px;
+	  font-size: 16px;
+	}
+	.form-signin .form-control:focus {
+	  z-index: 2;
+	}
+	.form-signin input[type="email"] {
+	  margin-bottom: -1px;
+	  border-bottom-right-radius: 0;
+	  border-bottom-left-radius: 0;
+	}
+	.form-signin input[type="password"] {
+	  margin-bottom: 10px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+</style>
 @stop
 
 @section('content')
-<div class="row">
-	<div class="col-md-4">
-		<h2>Heading</h2>
-		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-		<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-	</div>
-	<div class="col-md-4">
-		<h2>Heading</h2>
-		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-		<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-	</div>
-	<div class="col-md-4">
-		<h2>Heading</h2>
-		<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-		<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-	</div>
-</div>
+{{Form::open(['route' => 'auth.login.check', 'role' => 'form', 'class' => 'form-signin'])}}
+	<h2 class="form-signin-heading">Please sign in</h2>
+	
+	{{Form::email('email', '', [
+		'class'=>'form-control',
+		'placeholder'=>'Email Address',
+		'required'=>'required',
+		'autofocus'=>'autofocus'
+	])}}
 
-<hr>
-@stop
-
-@section('footer')
-<footer>
-	<p>&copy; Company 2014</p>
-</footer>
+	{{Form::password('password', [
+		'class'=>'form-control',
+		'placeholder'=>'Password',
+		'required'=>'required'
+	])}}
+	
+	<label class="checkbox">
+		{{Form::checkbox('remember', 'remember-me', false)}} Remember Me
+	</label>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+{{Form::close()}}
 @stop

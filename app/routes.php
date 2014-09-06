@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', ['as'=>'home', function()
 {
 	return View::make('layouts.master');
-});
+}]);
 
 Route::get('Topics', 
 [
@@ -178,7 +178,7 @@ Route::post('Register', [
 	'uses'=>'AuthController@postRegister']);
 
 Route::get('Activate:{activation_code}', [
-	'as'=>'auth.activete', 
+	'as'=>'auth.activate', 
 	'uses'=>'AuthController@getActivate']);
 
 Route::get('Forgot', [

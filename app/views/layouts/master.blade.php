@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title></title>
+		<title>Ranting Waktu</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,6 +20,8 @@
 		</style>
 		{{HTML::style('packages/bootstrap/css/bootstrap-theme.min.css')}}
 		{{HTML::style('styles/main.css')}}
+
+		@yield('css')
 
 		{{HTML::script('packages/components/modernizr/modernizr-2.6.2-respond-1.1.0.min.js')}}
 	</head>
@@ -76,5 +78,7 @@
 			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
 			ga('create','UA-XXXXX-X');ga('send','pageview');
 		</script>
+
+		@yield('js')
 	</body>
 </html>
