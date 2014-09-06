@@ -76,9 +76,46 @@ $ mysql -u root -proot
 
 Buka file `app/config/local` kemudian buka file `database.php`. Di bagian mysql, atur database menjadi `rantingwaktu`, username menjadi `root` dan password menjadi `root`.
 
+> Mengapa menggunakan folder local? Tidak menggunakan file database.php langsung di `config/app/database.php` saja?
+> Hal ini karena folder local adalah direktori yang telah di set khusus untuk development environment.
+> Info lebih lanjut lihat [Laravel Environment](http://laravel.com/docs/configuration#environment-configuration)!!
+
 Selamat aplikasi Anda sudah terhubung ke database.
 
- 
+# Setting Mail
+
+Buat file di `app/config/local/mail.php`. Kemudian isi dengan berikut:
+Isikan:
+
++ smtp server Anda
++ email anda
++ password email
+
+Jangan khawatir, file mail.php sudah terignore dan tidak akan masuk ke server.
+Karena sudah terignore di file `.gitignore`.
+
+```php 
+<?php 
+return array(
+
+	'driver' => 'smtp',
+
+	'host' => 'smtp.server.anda.com',
+
+	'port' => 587,
+
+	'from' => array('address' => 'email@anda.com', 'name' => 'Ranting Waktu'),
+
+	'encryption' => 'tls',
+
+	'username'	=> 'email@anda.com',
+
+	'password' => 'p@ss=5w0rD-k4mu',
+
+	'pretend' => false
+);
+
+```
 
 # Konsep-konsep
 
