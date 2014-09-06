@@ -15,6 +15,7 @@ class UsersSeeder extends Seeder {
 			$user = Sentry::createUser(array(
 				'email'     => 'admin@rantingwaktu.org',
 				'password'  => 'administrator',
+				'username'	=> 'administrator',
 				'activated' => true,
 			));
 				
