@@ -1,0 +1,1 @@
+/vagrant/app/views/auth/logout.blade.php

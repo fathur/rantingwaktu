@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', ['as'=>'home', function()
 {
-	return View::make('hello');
-});
+	return View::make('layouts.master');
+}]);
 
 Route::get('Topics', 
 [
@@ -178,7 +178,7 @@ Route::post('Register', [
 	'uses'=>'AuthController@postRegister']);
 
 Route::get('Activate:{activation_code}', [
-	'as'=>'auth.activete', 
+	'as'=>'auth.activate', 
 	'uses'=>'AuthController@getActivate']);
 
 Route::get('Forgot', [
@@ -193,7 +193,9 @@ Route::get('Forgot:{reset_code}', [
 	'as'=>'auth.forgot.confirm', 
 	'uses'=>'AuthController@getForgotConfirm']);
 
-Route::post('Forgot:{reset_code}', 'AuthController@postForgotConfirm');
+Route::post('Forgot:{reset_code}', [
+	'as'=>'auth.forgot.renew',
+	'uses'=>'AuthController@postForgotConfirm']);
 
 Route::get('Logout', [
 	'as'=>'auth.logout', 
